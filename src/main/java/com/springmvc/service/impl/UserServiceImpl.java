@@ -8,9 +8,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.HashMap;
 
-/**
- * @Remark :
- **/
+
 @Service("UserService")
 public class UserServiceImpl implements UserService {
 
