@@ -32,7 +32,7 @@ public interface UserMapper {
       * @param  :
       * @return : 
     **/
-    public List<User> find(User user);
+    public List<User> find();
 
     /**
       * 更新

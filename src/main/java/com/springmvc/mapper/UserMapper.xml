@@ -80,12 +80,15 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
 
-
   <select id="findByNameAndPassword" resultMap="BaseResultMap">
     SELECT
     <include refid="Base_Column_List" ></include>
     FROM user t
     WHERE t.username = #{username} and t.password = #{password}
   </select>
-
+  <select id="find" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"></include>
+    from user
+  </select>
 </mapper>
