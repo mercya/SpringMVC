@@ -7,7 +7,7 @@
   <script type="text/javascript" src="/static/js/jquery.js"></script>
 
   <body>
-        <form id="userForm" action="/user/find" method="post">
+        <form id="userForm" action="/user/find" method="get">
           用户名：<input type="text" name="username"><br>
           密码：<input type="password" name="password">
           <input type="submit"/>

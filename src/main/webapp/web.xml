@@ -9,10 +9,8 @@
     <description>Spring</description>
     <param-name>contextConfigLocation</param-name>
     <!-- 如果是监听多个文件，可用‘，’隔开 -->
-    <param-value>classpath:spring-context.xml,classpath:spring-mvc.xml</param-value>
+    <param-value>classpath*:spring-mvc.xml,classpath*:spring-context.xml</param-value>
   </context-param>
-
-
   <listener>
     <description>Spring</description>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -48,9 +46,8 @@
 
   <!--log4j配置文件加载-->
   <context-param>
-
     <param-name>log4jConfigLocation</param-name>
-    <param-value>src/main/resources/log4j.properties</param-value>
+    <param-value>/WEB-INF/log4j.properties</param-value>
   </context-param>
   <!--启动一个watchdog线程每1800秒扫描一下log4j配置文件的变化-->
   <context-param>
@@ -72,7 +69,8 @@
     <init-param>
       <param-name>contextConfigLocation</param-name>
       <!--spring-mvc-->
-      <param-value>classpath:spring-mvc.xml</param-value>
+      <param-value>classpath*:spring-mvc.xml
+      </param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
@@ -96,7 +94,7 @@
   </session-config>
 
   <welcome-file-list>
-    <welcome-file>src/main/webapp/WEB-INF/page/index.jsp</welcome-file>
+    <welcome-file>/WEB-INF/page/index.jsp</welcome-file>
   </welcome-file-list>
 
 </web-app>

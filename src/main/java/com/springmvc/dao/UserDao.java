@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository("UserMapper")
-public interface UserMapper {
+@Repository("UserDao")
+public interface UserDao {
     int deleteByPrimaryKey(Integer id);
 
     int insert(User record);
@@ -34,10 +34,4 @@ public interface UserMapper {
     **/
     public List<User> find();
 
-    /**
-      * 更新
-      * @param  :
-      * @return :
-    **/
-    public void updateUser(User user);
 }
