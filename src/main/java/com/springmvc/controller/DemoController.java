@@ -18,13 +18,13 @@ import java.util.Map;
 /**
  * Created by eCRF on 2017/12/15.
  */
-@Controller(value = "demoController")
+@Controller
 @RequestMapping("/usera")
 public class DemoController {
 
     private Logger logger = Logger.getLogger(DemoController.class);
 
-    @Resource(name="UserService")
+    @Resource(name="userService")
     private UserService UserService;
 
     @RequestMapping(value = "/finda",method = RequestMethod.GET)

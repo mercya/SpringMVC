@@ -16,10 +16,11 @@
     <!--expression="org.springframework.stereotype.Controller"/>-->
     <!--<context:include-filter type="annotation"-->
     <!--</context:component-scan>-->
+    <import resource="spring-context.xml"/>
 
-    <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
     <context:annotation-config/>
     <context:component-scan base-package="com.springmvc"/>
+
     <!-- 配置包扫描器，扫描@Controller注解的类 -->
 
     <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">

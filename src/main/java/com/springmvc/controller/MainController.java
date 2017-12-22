@@ -23,7 +23,7 @@ public class MainController {
 
     private Logger logger = Logger.getLogger(MainController.class);
 
-    @Resource(name="UserService")
+    @Resource(name="userService")
     private UserService UserService;
 
     @RequestMapping(value = "/studentinfo",method = RequestMethod.GET)

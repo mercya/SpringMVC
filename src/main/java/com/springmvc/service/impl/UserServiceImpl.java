@@ -1,6 +1,6 @@
 package com.springmvc.service.impl;
 
-import com.springmvc.dao.UserDao;
+import com.springmvc.dao.UserMapper;
 import com.springmvc.entity.User;
 import com.springmvc.service.UserService;
 import org.springframework.stereotype.Service;
@@ -9,11 +9,11 @@ import javax.annotation.Resource;
 import java.util.List;
 
 
-@Service("UserService")
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
-    @Resource(name = "UserDao")
-    private UserDao userDao;
+    @Resource(name = "userMapper")
+    private UserMapper userMapper;
 //
 //    @Override
 //    public User findUserByNameAndPassword(String username, String password) {
@@ -21,21 +21,21 @@ public class UserServiceImpl implements UserService {
 //    }
     @Override
     public User findUserByNameAndPassword(String username, String password) {
-        return userDao.findByNameAndPassword(username,password);
+        return userMapper.findByNameAndPassword(username,password);
     }
 
     @Override
     public int insertUser(User user) {
-        return userDao.insert(user);
+        return userMapper.insert(user);
     }
 
     @Override
     public User selectByPrimaryKey(Integer stuId) {
-        return userDao.selectByPrimaryKey(stuId);
+        return userMapper.selectByPrimaryKey(stuId);
     }
 
     @Override
     public List<User> find() {
-        return userDao.find();
+        return userMapper.find();
     }
 }

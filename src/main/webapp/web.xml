@@ -9,7 +9,7 @@
     <description>Spring</description>
     <param-name>contextConfigLocation</param-name>
     <!-- 如果是监听多个文件，可用‘，’隔开 -->
-    <param-value>classpath*:spring-mvc.xml,classpath*:spring-context.xml</param-value>
+    <param-value>classpath*:spring-mvc.xml</param-value>
   </context-param>
   <listener>
     <description>Spring</description>
@@ -69,7 +69,7 @@
     <init-param>
       <param-name>contextConfigLocation</param-name>
       <!--spring-mvc-->
-      <param-value>classpath*:spring-mvc.xml
+      <param-value>classpath*:spring-*.xml,
       </param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>

@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository("UserDao")
-public interface UserDao {
+@Repository("userMapper")
+public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
 
     int insert(User record);
@@ -20,18 +20,10 @@ public interface UserDao {
 
     int updateByPrimaryKey(User record);
 
-    /**
-      * 根据用户名和密码获取用户
-      * @param  :
-      * @return
-    **/
+
     public User findByNameAndPassword(@Param("username")String username,@Param("password") String password);
 
-    /**
-      * 获取用户
-      * @param  :
-      * @return : 
-    **/
+
     public List<User> find();
 
 }

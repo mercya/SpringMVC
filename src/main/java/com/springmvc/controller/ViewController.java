@@ -18,7 +18,7 @@ public class ViewController {
 
     private Logger logger = Logger.getLogger(ViewController.class);
 
-    @Resource(name="UserService")
+    @Resource(name="userService")
     private UserService UserService;
 
     @RequestMapping("/index")
