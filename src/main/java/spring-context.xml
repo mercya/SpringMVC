@@ -31,8 +31,8 @@
         <property name="url" value="${jdbc.url}"/>
         <property name="username" value="${jdbc.username}"/>
         <property name="password" value="${jdbc.password}"/>
+        <!--<property name="driver" value="${jdbc.driver}"/>-->
         <property name="driverClassName" value="${jdbc.driver}"/>
-
         <!-- 配置初始化大小、最小、最大 -->
         <property name="initialSize" value="1"/>
         <property name="minIdle" value="1"/>
