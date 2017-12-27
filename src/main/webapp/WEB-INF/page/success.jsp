@@ -5,6 +5,8 @@
 <html>
 <head>
     <title>登录成功</title>
+    <script></script>
+
 </head>
 <body>
 

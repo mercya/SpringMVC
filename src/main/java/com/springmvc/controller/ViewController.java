@@ -7,6 +7,8 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -24,6 +26,17 @@ public class ViewController {
     @RequestMapping("/index")
     public String index(){
         return "index";
+    }
+
+
+
+
+    @RequestMapping("/haha")
+    public ModelAndView getView()
+    {
+        ModelAndView modelAndView=new ModelAndView("Outting");
+        modelAndView.addObject("name","xxx");
+        return modelAndView;
     }
 
 

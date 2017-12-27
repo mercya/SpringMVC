@@ -2,7 +2,6 @@ package com.springmvc.test;
 
 import com.springmvc.dao.UserMapper;
 import org.junit.Test;
-import org.springframework.beans.factory.aspectj.AbstractDependencyInjectionAspect;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.AbstractDependencyInjectionSpringContextTests;
