@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springmvc.dao.usercarMapper" >
+  <resultMap id="BaseResultMap" type="com.springmvc.entity.usercarKey" >
+    <id column="cardetailid" property="cardetailid" jdbcType="VARCHAR" />
+    <id column="openid" property="openid" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="com.springmvc.entity.usercarKey" >
+    delete from usercar
+    where cardetailid = #{cardetailid,jdbcType=VARCHAR}
+      and openid = #{openid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.springmvc.entity.usercarKey" >
+    insert into usercar (cardetailid, openid)
+    values (#{cardetailid,jdbcType=VARCHAR}, #{openid,jdbcType=VARCHAR})
+  </insert>
+  <resultMap id="queryForListMap" type="com.springmvc.entity.usercarKey">
+    <id column="openid" property="openid" jdbcType="VARCHAR"/>
+    <result column="cardetailid" property="cardetailid" jdbcType="VARCHAR"/>
+    <collection property="goodsdetail" javaType="java.util.List" ofType="com.springmvc.entity.goodsdetail">
+      <id column="r_goodsname" property="goodsname" jdbcType="VARCHAR" />
+      <result column="r_name" property="name" jdbcType="VARCHAR" />
+      <result column="r_goodsdiscription" property="goodsdiscription" jdbcType="VARCHAR" />
+      <result column="r_goodsid" property="goodsid" jdbcType="VARCHAR" />
+      <result column="r_goodsprice" property="goodsprice" jdbcType="INTEGER" />
+    </collection>
+  </resultMap>
+  <select id="findForListbyOpenid" resultMap="BaseResultMap">
+      SELECT
+        u.openid,
+        u.cardetailid,
+        r.goodsname,
+        r.goodsdiscription,
+        r.goodsid,
+        r.goodsprice
+        FROM  usercar u
+        LEFT JOIN goodsdetail r
+        ON openid=#{openid,jdbcType=VARCHAR}
+  </select>
+
+  <insert id="insertSelective" parameterType="com.springmvc.entity.usercarKey" >
+    insert into usercar
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cardetailid != null" >
+        cardetailid,
+      </if>
+      <if test="openid != null" >
+        openid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cardetailid != null" >
+        #{cardetailid,jdbcType=VARCHAR},
+      </if>
+      <if test="openid != null" >
+        #{openid,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

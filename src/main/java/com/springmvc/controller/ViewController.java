@@ -6,6 +6,7 @@ import org.apache.commons.collections.map.HashedMap;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -29,11 +30,8 @@ public class ViewController {
     }
 
 
-
-
     @RequestMapping("/haha")
-    public ModelAndView getView()
-    {
+    public ModelAndView getView() {
         ModelAndView modelAndView=new ModelAndView("Outting");
         modelAndView.addObject("name","xxx");
         return modelAndView;
@@ -42,10 +40,10 @@ public class ViewController {
 
     @RequestMapping("/find")
     @ResponseBody
-    public Map<String,Object> find(User user, HttpServletRequest request){
+    public Map<String,Object> find(User user,@RequestParam("username")String username, @RequestParam("password")String password){
 
         Map<String,Object> map = new HashedMap();
-        List<User> loginUser = UserService.find();
+        User loginUser =  UserService.findUserByNameAndPassword(username,password);
         if(loginUser == null){
             map.put("result","fail");
         }else{
