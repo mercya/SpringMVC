@@ -34,6 +34,8 @@ public class GoodsController {
     @Resource(name = "usercarService")
     private usercarService usercarService;
 
+
+    //查看user的key值
     @RequestMapping(value = "/usercarkey",method = RequestMethod.GET)
     @ResponseBody
     public List<usercarKey> getuserCarKey(@RequestParam("openid")String openid){

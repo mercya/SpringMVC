@@ -17,6 +17,5 @@ public class TestBeanInjection extends AbstractDependencyInjectionSpringContextT
         ApplicationContext context =new ClassPathXmlApplicationContext("spring-mvc.xml");
         orderuserMapper text= (orderuserMapper) context.getBean("orderuserMapper");
         orderuser orderus=  text.selectByPrimaryKey("123456");
-
     }
 }
