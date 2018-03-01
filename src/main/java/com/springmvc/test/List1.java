@@ -112,8 +112,5 @@ public class List1 {
         iterMotion(fill(new ArrayList()));
         testVisual(fill(new LinkedList()));
         testLinkedList();
-
     }
-
-
 }
