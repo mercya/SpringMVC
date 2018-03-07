@@ -51,13 +51,13 @@ public class GoodsController {
     }
 
 
-
     //查找全部的商品信息
     @RequestMapping(value = "/goodsList",method = RequestMethod.GET)
     @ResponseBody
     public Map<String,Object> finda(){
         Map<String,Object> map = new HashedMap();
         List<goodsdetail> goods = goodsService.findAllGoods();
+        map.put("","");
         if(goods.size()==0){
             map.put("result",0);
         }else{

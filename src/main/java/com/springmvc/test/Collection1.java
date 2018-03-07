@@ -2,10 +2,7 @@ package com.springmvc.test;
 
 import org.springframework.stereotype.Controller;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * Created by eCRF on 2018/2/23.
@@ -71,7 +68,7 @@ public class Collection1 {
         System.out.println("c.inEmpty()="+c.isEmpty());
         c=newCollection();
         print(c);
-        c.clear();;
+        c.clear();
         System.out.println("after c.clear():");
         print(c);
 

@@ -5,12 +5,19 @@
   </head>
   <link rel="stylesheet" href="/asset/css/style.css"/>
   <script type="text/javascript" src="/static/js/jquery.js"></script>
+<style type="text/css">
+  .loginp{
+    border-radius:inherit;
+    border-color: #002a80;
+    margin: 0 auto;
+  }
+</style>
 
   <body>
         <form id="userForm" action="/user/find" method="get">
-          用户名：<input type="text" name="username">
+          用户名：<input class="loginp" type="text" name="username">
           <br>
-          密码：<input type="password" name="password">
+          密码：<input class="loginp" type="password" name="password">
           </br>
           <input type="submit"/>
         </form>
