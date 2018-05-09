@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -40,17 +41,20 @@ public class ViewController {
 
     @RequestMapping("/find")
     @ResponseBody
-    public Map<String,Object> find(User user,@RequestParam("username")String username, @RequestParam("password")String password){
-
-        Map<String,Object> map = new HashedMap();
+    public ModelAndView find(User user,@RequestParam("username")String username, @RequestParam("password")String password){
+        ModelAndView modelAndView;
+        Map<String,Object> map = new HashMap();
         User loginUser =  UserService.findUserByNameAndPassword(username,password);
         if(loginUser == null){
+            modelAndView=new ModelAndView("error");
             map.put("result","fail");
         }else{
+            modelAndView=new ModelAndView("success");
             map.put("user",loginUser);
             map.put("result","success");
+            modelAndView.addObject("map",map);
         }
-        return map;
+        return modelAndView;
     }
 
     @RequestMapping("/success")

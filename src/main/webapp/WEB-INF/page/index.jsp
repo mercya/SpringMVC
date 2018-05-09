@@ -1,27 +1,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>demo</title>
-  </head>
-  <link rel="stylesheet" href="/asset/css/style.css"/>
-  <script type="text/javascript" src="/static/js/jquery.js"></script>
-<style type="text/css">
-  .loginp{
-    border-radius:inherit;
-    border-color: #002a80;
-    margin: 0 auto;
-  }
-</style>
+<head>
+  <title>demo</title>
+</head>
+<link href="../../static/css/bootstrap.min.css" rel="stylesheet">
 
-  <body>
-        <form id="userForm" action="/user/find" method="get">
-          用户名：<input class="loginp" type="text" name="username">
-          <br>
-          密码：<input class="loginp" type="password" name="password">
-          </br>
-          <input type="submit"/>
-        </form>
-  </body>
-<script>
-</script>
+<body>
+<div class="container text-center">
+  <form id="userForm" action="/user/find" method="post">
+    用户名：<input type="text" name="username">
+    <br>
+    密  码：<input type="password" name="password">
+    </br>
+    <input type="submit"/>
+  </form>
+</div>
+</body>
+<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+<script src="../../static/js/jquery.js"></script>
+<!-- 包括所有已编译的插件 -->
+<script src="../../static/js/bootstrap.min.js"></script>
 </html>
