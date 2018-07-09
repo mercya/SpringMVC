@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="springmvc" target="1.6" />
+      <module name="springmvc" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
